@@ -1,2 +1,2 @@
 [server]
-ec2-instance ansible_host=44.203.69.127 ansible_user=ubuntu 
+ec2-instance ansible_host=34.239.132.211 ansible_user=ubuntu 
