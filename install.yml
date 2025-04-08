@@ -1,0 +1,36 @@
+---
+- name: install jenkin on Ec2
+  hosts: server
+  become: true
+
+  tasks:
+   -  name: install java
+      ansible.builtin.apt:
+         name: openjdk-17-jdk
+         state: present
+
+   - name: Download Jenkins GPG key
+     ansible.builtin.get_url:
+         url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+         dest: /usr/share/keyrings/jenkins-keyring.asc
+         mode: '0644'
+
+   - name:  add jenkin repositry 
+     ansible.builtin.apt_repository:
+         repo:  "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian binary/"
+         state: present
+         filename: jenkins
+   - name: install jenkin
+     ansible.builtin.apt:
+         name: jenkins
+         state: present
+
+   - name: install docker 
+     ansible.builtin.apt:
+         name: docker.io
+         state: present
+
+        
+
+    
+      
