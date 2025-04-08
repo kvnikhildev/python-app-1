@@ -6,7 +6,7 @@ install jenkin in ec2 instaces using ansible steps below
 create ssh-keygen
   ssh-keygen
 copy public key to ec2 instance autherised key 
- scp -i /home/nik/KeypairCLI.pem  /home/nik/.ssh/id_rsa.pub ubuntu@54.90.75.171:/home/ubuntu/.ssh/authorized_key
+ scp -i /home/nik/KeypairCLI.pem  /home/nik/.ssh/id_rsa.pub ubuntu@54.90.75.171:~/.ssh/authorized_key
 (scp -i yourkeypair  yoursshkey ubuntu@publiip:~/.ssh/autherised_key)
 install java and jenkin docker using ansible playbook -- file provided
 check the version using adhock cmd
@@ -36,4 +36,3 @@ add plugin
   git branch -m main
   git remote add origin https://github.com/kvnikhildev/python-app-1.git   # use yourrepositry
   git push -u origin main
-  
