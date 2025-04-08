@@ -18,7 +18,7 @@ pipeline {
         stage('deploy') {
             steps {
                 script{
-                   sh  'docker run -p 5000:5000 pyhon-app-1'
+                   sh  'docker run -p 5000:5000 python-app-1'
                 }
               
             }
